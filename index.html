@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginés Dev | Mobile & Video Streaming Applications</title>
+    <meta name="description" content="Official portfolio of Ginés Dev - Creator of AnyLink URL Video Player and Amma Studio HD.">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151c2c;
+            --card-border: #232d42;
+            --primary: #38bdf8;
+            --primary-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #818cf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.25rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.25rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: var(--card-border);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .app-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0b0f19;
+            font-size: 1.2rem;
+        }
+
+        .app-title h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .app-title span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .app-desc {
+            color: var(--text-muted);
+            font-size: 0.925rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .app-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #0b0f19;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            color: var(--text-main);
+            border-color: var(--text-muted);
+        }
+
+        .legal-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-card h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-card p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Ginés Dev</a>
+        <nav>
+            <a href="#apps">Apps</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#contact">Contact</a>
+            <a href="/app-ads.txt" target="_blank">app-ads.txt</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Ginés Dev Studio</h1>
+            <p>Building high-performance video streaming applications and Android tools.</p>
+        </section>
+
+        <h2 class="section-title" id="apps">Published Applications</h2>
+        
+        <div class="apps-grid">
+            <!-- AnyLink App Card -->
+            <div class="app-card">
+                <div>
+                    <div class="app-header">
+                        <div class="app-icon">AL</div>
+                        <div class="app-title">
+                            <h2>AnyLink URL Video Player</h2>
+                            <span>com.gines.anylink</span>
+                        </div>
+                    </div>
+                    <p class="app-desc">
+                        Versatile media player supporting RTMP, RTSP, HLS (.m3u8), DASH (.mpd), and direct video URLs. Features a saved stream library, Picture-in-Picture mode, and screen locking.
+                    </p>
+                </div>
+                <div class="app-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.gines.anylink" target="_blank" class="btn btn-primary">Google Play</a>
+                    <a href="#privacy-anylink" class="btn btn-secondary">Privacy</a>
+                </div>
+            </div>
+
+            <!-- Amma Studio App Card -->
+            <div class="app-card">
+                <div>
+                    <div class="app-header">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #a855f7, #ec4899);">AS</div>
+                        <div class="app-title">
+                            <h2>Amma Studio HD</h2>
+                            <span>com.gines.ammastudiohd</span>
+                        </div>
+                    </div>
+                    <p class="app-desc">
+                        High-definition live video streaming application powered by real-time database configuration and RTMP streaming backend.
+                    </p>
+                </div>
+                <div class="app-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.gines.ammastudiohd" target="_blank" class="btn btn-primary">Google Play</a>
+                    <a href="#privacy-amma" class="btn btn-secondary">Privacy</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="privacy">Privacy Policies</h2>
+
+        <div class="legal-card" id="privacy-anylink">
+            <h3>Privacy Policy - AnyLink URL Video Player</h3>
+            <p>AnyLink does not require user registration. Saved stream URLs are stored locally on your device using SharedPreferences and are never transmitted to external servers. The app uses Google AdMob to serve non-personalized and personalized advertisements. AdMob may collect device identifiers and usage metrics in accordance with Google's Privacy Policy.</p>
+        </div>
+
+        <div class="legal-card" id="privacy-amma">
+            <h3>Privacy Policy - Amma Studio HD</h3>
+            <p>Amma Studio HD retrieves streaming configuration from Firebase Realtime Database. It does not collect personal identity information. App diagnostics and crash reports are handled via Firebase Crashlytics to improve application stability.</p>
+        </div>
+
+        <h2 class="section-title" id="contact">Support & Contact</h2>
+
+        <div class="legal-card">
+            <h3>Developer Support</h3>
+            <p>For technical support, feature requests, or privacy inquiries regarding any of our applications, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:gines.thilla@gmail.com" style="color: var(--primary);">gines.thilla@gmail.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ginés Dev. All rights reserved. | <a href="/app-ads.txt" target="_blank">app-ads.txt</a></p>
+    </footer>
+
+</body>
+</html>
